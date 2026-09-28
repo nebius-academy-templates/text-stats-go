@@ -1,0 +1,4 @@
+A small Go report
+
+This sample includes a blank line.
+Count words and characters from the file.
