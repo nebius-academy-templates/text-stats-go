@@ -1,6 +1,6 @@
 # text-stats-go
 
-A small, standard-library-only command-line tool for reporting statistics about a text file. This is the local Go fixture for the Codex Foundation lessons; it is independent of the Python `text-stats` repository.
+A small, standard-library-only command-line tool for reporting statistics about a text file. This is the local Go fixture for the Codex Foundation lessons.
 
 ## Before the lessons
 
