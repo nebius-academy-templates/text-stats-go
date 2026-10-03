@@ -1,0 +1,7 @@
+version = 1
+name = "text-stats-go"
+
+[setup]
+script = '''
+GOPROXY=off GOTOOLCHAIN=go1.26.8 go test ./...
+'''
