@@ -46,6 +46,11 @@ func readLines(path string) ([]string, error) {
 	return splitLines(text), nil
 }
 
+// readDocument is the new production loader. It does not reuse readText.
+func readDocument(path string) (document, error) {
+	return documentFromPath(path)
+}
+
 // splitLines follows the Python fixture's logical-line contract, including
 // interior blank lines but not an extra line after a final line break.
 func splitLines(text string) []string {

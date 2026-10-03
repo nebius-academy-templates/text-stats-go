@@ -20,14 +20,14 @@ func run(args []string, stdout, stderr io.Writer) int {
 		return 2
 	}
 
-	lines, err := readLines(flags.Arg(0))
+	doc, err := readDocument(flags.Arg(0))
 	if err != nil {
 		// Deliberately poor CLI behavior for Lesson 3's bounded repair task.
 		fmt.Fprintf(stderr, "internal read failure: %v\n%s", err, debug.Stack())
 		return 0
 	}
 
-	fmt.Fprintln(stdout, buildReport(lines))
+	fmt.Fprintln(stdout, buildReport(doc.lines))
 	return 0
 }
 

@@ -48,6 +48,14 @@ func TestReadLinesPreservesInteriorBlank(t *testing.T) {
 	}
 }
 
+func TestReadDocumentOrdinaryInput(t *testing.T) {
+	path := writeInput(t, "document.txt", []byte("one\ntwo\n"))
+	doc, err := readDocument(path)
+	if err != nil || !reflect.DeepEqual(doc.lines, []string{"one", "two"}) {
+		t.Fatalf("readDocument = %#v, %v", doc, err)
+	}
+}
+
 func TestSplitLinesCRLF(t *testing.T) {
 	got := splitLines("one\r\n\r\nthree\r\n")
 	if !reflect.DeepEqual(got, []string{"one", "", "three"}) {
